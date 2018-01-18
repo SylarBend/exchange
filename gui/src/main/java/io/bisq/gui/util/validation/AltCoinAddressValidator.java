@@ -341,6 +341,11 @@ public final class AltCoinAddressValidator extends InputValidator {
                     } else {
                         return regexTestFailed;
                     }
+                case "TRTL":
+                    if (input.matches("^TRTL[a-zA-Z1-9]{95}$"))
+                        return new ValidationResult(true);
+                    else
+                        return regexTestFailed;
                 case "MDC":
                     if (input.matches("^m[a-zA-Z0-9]{26,33}$"))
                         return new ValidationResult(true);
