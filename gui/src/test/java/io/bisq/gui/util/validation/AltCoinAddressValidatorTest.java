@@ -286,7 +286,29 @@ public class AltCoinAddressValidatorTest {
     @Test
     public void testXCN() {
         AltCoinAddressValidator validator = new AltCoinAddressValidator();
-        validator.setCurrencyCode("XCN");
+        validator.setCurrencyCode("TRTL");
+
+        assertTrue(validator.validate("TRTLuxPcrt2HLWcpJcWhcFTMmsSviTAE9QjWYzHcogBx1NYxqzhFQwj9S1yN8r62fG3Qs2G35JxQm6nPudxSW3NjKdbBfmeXzV9").isValid);
+        assertTrue(validator.validate("TRTLuwx5qDcCXZPxVNHsRtW4jrgJ2Cj41gbMcF8dLAsxVe8tH7pGJ7ddVH39Q1nzTbF6Y1Dy8i8SRbB4gcFyrL6HiwCB7ivsjvD").isValid);
+        assertTrue(validator.validate("TRTLuxqFJHDJYToz6RYJZH7wTL9QTPnzqHk4C7jeXZofHxCvjhCLFBEJF7yFdzRVQQbKLkhZ2utSyPKyJT6nK9H2LUfAfEsC9VY").isValid);
+        assertTrue(validator.validate("TRTLuz6iufYZVpHmM6H3GgaaC2eWyuP1VHVMtnPsehRwXLXWGQKcvQNP9LcY9CGkXFQz4xGT29WKTJ9pd4AN3omtbiWR2gKaa9T").isValid);
+
+        assertFalse(validator.validate("TRTLuz6iufYZVpHmM6H3GgaaC2eWyuP1VHVMtnPsehRwXLXWGQKcvQNP9LcY9CGkXFQz4xGT29WKTJ9pd4AN3omtbiWR2gKaa9TS").isValid);
+        assertFalse(validator.validate("TRTsuzYMgYVKzo4Sy1ab3f2Qdwxb9dsokXJdGYxh25CfRwpteqEnw4NR5ZjJKi5oykEgKzQAsM4BBjQS2PB1MXoMdcHjwDJh3D").isValid);
+        assertFalse(validator.validate("WRTLv41VjXaSA7B8hYsZupEcRJ6GSfaAjFs7iN2DTxf4Roxby2WfjgV7SgUboDd27SfM1JvLyjFsxYFxpXzoHRunFv7BJebN5Yt").isValid);
+        assertFalse(validator.validate("TRXX3f2Qdwxb9dsokXJdGYxh25CfRwpteqEnw4NR5ZjJKi5oykEgKQuRffmbpkrYQtSiUAm4oZJgT").isValid);
+        assertFalse(validator.validate("4rtLux8dmDn5ABhEaWU1TCKpojiaiWuym6WANmJhAq8RZbvCBJNQeFt2Jvdgy1kw51Ljp55uguwcdKbLjWuzRZHLMmGNqAzeez1").isValid);
+        assertFalse(validator.validate("").isValid);
+        assertFalse(validator.validate("asdasd").isValid);
+        assertFalse(validator.validate("1T49DTNo5itqYoAD6XTGyTKbe8z5nGY2Da").isValid);
+        assertFalse(validator.validate("4o5itqYoAD6XTGyTKbe8z5nGY2Da").isValid);
+        assertFalse(validator.validate("4o5itqYoAD6XTGyTKbe8z5nGY2Da").isValid);
+    }
+
+    @Test
+    public void testTRTL() {
+        AltCoinAddressValidator validator = new AltCoinAddressValidator();
+        validator.setCurrencyCode("TRTL");
 
         assertTrue(validator.validate("CT49DTNo5itqYoAD6XTGyTKbe8z5nGY2D5").isValid);
         assertTrue(validator.validate("CGTta3M4t3yXu8uRgkKvaWd2d8DQvDPnpL").isValid);
